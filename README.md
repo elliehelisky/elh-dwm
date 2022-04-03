@@ -18,7 +18,14 @@ I have some catches built in to find alternatives.
 - If you don't have firefox, it will try chromium, then librewolf.
 - nemo is by default.
 
-To install, clone this repository, navigate to the folder, make any wanted changes to config.def.h, then run sudo make clean install.
+# Patches
+By default, I have systray, uselessgaps, and autostart as my patches. It has already been patched so no further action is needed.
+
+If you choose to remove any of these patches. Install *patch* from your distro's package manager and remove them using this sytax
+
+-`patch p1 < patch-name.diff`
+- correct any errors that may happen
+- `sudo make clean install`
 
 # Starting it from a Display Manager (SDDM, LightDM, etc;)
 Create a .desktop file in /usr/share/xsession
