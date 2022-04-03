@@ -90,7 +90,7 @@ static const char *mutevol[] = {"/usr/bin/pactl", "set-sink-mute", "0",
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
-    {MODKEY, XK_d, spawn, SHCMD("rofi -show drun")},
+    {MODKEY, XK_d, spawn, SHCMD("rofi -show drun || dmenu_run")},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
     {MODKEY | ShiftMask, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
@@ -100,7 +100,7 @@ static Key keys[] = {
     {MODKEY, XK_p, spawn, {.v = nemocmd}},
     {MODKEY, XK_b, spawn,
      SHCMD("firefox || chromium || librewolf-community || brave-bin")},
-    {0, XK_Print, spawn, SHCMD("spectacle &")},
+    {0, XK_Print, spawn, SHCMD("spectacle || flameshot")},
     {0, XF86XK_AudioLowerVolume, spawn, {.v = downvol}},
     {0, XF86XK_AudioMute, spawn, {.v = mutevol}},
     {0, XF86XK_AudioRaiseVolume, spawn, {.v = upvol}},
