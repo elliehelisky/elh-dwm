@@ -99,7 +99,7 @@ static Key keys[] = {
     {MODKEY, XK_o, incnmaster, {.i = -1}},
     {MODKEY, XK_p, spawn, {.v = nemocmd}},
     {MODKEY, XK_b, spawn,
-     SHCMD("$HOME/AppImages/LibreWolf/LibreWolf.x86_64.AppImage")},
+     SHCMD("firefox || chromium || librewolf-community || brave-bin")},
     {0, XK_Print, spawn, SHCMD("spectacle &")},
     {0, XF86XK_AudioLowerVolume, spawn, {.v = downvol}},
     {0, XF86XK_AudioMute, spawn, {.v = mutevol}},
