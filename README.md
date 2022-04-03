@@ -16,7 +16,11 @@ To install, clone this repository, navigate to the folder and run sudo make clea
 Create a .desktop file in /usr/share/xsession
 
 [Desktop Entry]
+
 Name=dwm
-Comment=Dynamic Window Manager
+
+Comment=Dynamic Window Manager  
+
 Exec=dwm
+
 Type=Application
