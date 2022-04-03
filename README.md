@@ -10,7 +10,15 @@ Compiled on Void Linux
 # Optional
 By default, I am using ST, rofi, spectacle, and nemo.  If you do not wish to use any of these, you can edit config.def.h to replace st with a terminal of your choice, rofi with dmenu, etc.
 
-To install, clone this repository, navigate to the folder and run sudo make clean install.
+I have some catches built in to find alternatives.
+
+**Example:**
+
+- If you don't have rofi, it will default to dmenu
+- If you don't have firefox, it will try chromium, then librewolf.
+- nemo is by default.
+
+To install, clone this repository, navigate to the folder, make any wanted changes to config.def.h, then run sudo make clean install.
 
 # Starting it from a Display Manager (SDDM, LightDM, etc;)
 Create a .desktop file in /usr/share/xsession
