@@ -6,6 +6,7 @@ Compiled on Void Linux
 - libXinerama-devel
 - libXft-devel
 - freetype-devel
+- All dependencies that are included with the previously stated
 
 # Optional
 By default, I am using ST, rofi, spectacle, and nemo.  If you do not wish to use any of these, you can edit config.def.h to replace st with a terminal of your choice, rofi with dmenu, etc.
@@ -39,3 +40,14 @@ Comment=Dynamic Window Manager
 Exec=dwm
 
 Type=Application
+
+# Hotkeys
+
+For the most part, I am using default DWM hotkeys, with some odd exceptions
+1. The Mod key is Super/Windows/Command Key.
+2. Mod + P opens Nemo
+3. Mod + D opens dmenu/rofi
+4. Printscreen opens Spectacle/Flameshot
+5. Mod + Shift + Q closes focused application
+6. Mod + Shift + R quits dwm
+
