@@ -29,7 +29,7 @@ If you choose to remove any of these patches. Install *patch* from your distro's
 3. `sudo make clean install`
 
 # Starting it from a Display Manager (SDDM, LightDM, etc;)
-Create a .desktop file in /usr/share/xsession
+Create a .desktop file in /usr/share/xsessions/
 
 [Desktop Entry]
 
