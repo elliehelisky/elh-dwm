@@ -80,7 +80,6 @@ static const char *dmenucmd[] = {
     "dmenu_run", "-m",      dmenumon, "-fn",    dmenufont, "-nb",     col_gray1,
     "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL};
 static const char *termcmd[] = {"st", NULL};
-static const char *nemocmd[] = {"nemo", NULL};
 static const char *upvol[] = {"/usr/bin/pactl", "set-sink-volume", "0", "+5%",
                               NULL};
 static const char *downvol[] = {"/usr/bin/pactl", "set-sink-volume", "0", "-5%",
@@ -97,7 +96,7 @@ static Key keys[] = {
     {MODKEY, XK_k, focusstack, {.i = -1}},
     {MODKEY, XK_i, incnmaster, {.i = +1}},
     {MODKEY, XK_o, incnmaster, {.i = -1}},
-    {MODKEY, XK_p, spawn, {.v = nemocmd}},
+    {MODKEY, XK_p, spawn, SHCMD("nemo || st -e ranger || thunar || dolphin || nautilus)},
     {MODKEY, XK_b, spawn,
      SHCMD("firefox || chromium || librewolf-community || brave-bin")},
     {0, XK_Print, spawn, SHCMD("spectacle || flameshot")},
