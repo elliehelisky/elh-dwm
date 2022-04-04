@@ -96,7 +96,7 @@ static Key keys[] = {
     {MODKEY, XK_k, focusstack, {.i = -1}},
     {MODKEY, XK_i, incnmaster, {.i = +1}},
     {MODKEY, XK_o, incnmaster, {.i = -1}},
-    {MODKEY, XK_p, spawn, SHCMD("nemo || st -e ranger || thunar || dolphin || nautilus)},
+    {MODKEY, XK_p, spawn, SHCMD("nemo || st -e ranger || thunar || dolphin || nautilus")},
     {MODKEY, XK_b, spawn,
      SHCMD("firefox || chromium || librewolf-community || brave-bin")},
     {0, XK_Print, spawn, SHCMD("spectacle || flameshot")},
