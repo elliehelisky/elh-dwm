@@ -15,9 +15,9 @@ I have some catches built in to find alternatives.
 
 **Example:**
 
-- If you don't have rofi, it will default to dmenu
-- If you don't have firefox, it will try chromium, then librewolf.
-- nemo is by default.
+- rofi -> dmenu
+- firefox -> chromium -> librewolf -> brave
+- nemo -> ranger (via st) -> thunar -> dolphin -> nautilus
 
 # Patches
 By default, I have systray, uselessgaps, and autostart as my patches. It has already been patched so no further action is needed.
