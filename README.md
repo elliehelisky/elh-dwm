@@ -2,6 +2,8 @@
 My DWM Build
 Compiled on Void Linux
 
+Relies on [my st build](https://github.com/elliehelisky/elh-st)
+
 # Build Dependencies
 - libXinerama-devel
 - libXft-devel
