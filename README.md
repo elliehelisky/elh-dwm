@@ -20,7 +20,7 @@ I have some catches built in to find alternatives.
 - nemo -> ranger (via st) -> thunar -> dolphin -> nautilus
 
 # Patches
-By default, I have systray, uselessgaps, and autostart as my patches. It has already been patched so no further action is needed.
+By default, I have systray, uselessgaps, and autostart as my patches. It has already been patched so no further action is needed besides creating the ~/.dwm/dwm_autostart.sh script
 
 If you choose to remove any of these patches. Install *patch* from your distro's package manager and remove them using this sytax
 
@@ -45,7 +45,7 @@ Type=Application
 
 For the most part, I am using default DWM hotkeys, with some odd exceptions
 1. The Mod key is Super/Windows/Command Key.
-2. Mod + P opens Nemo
+2. Mod + P opens File Manager
 3. Mod + D opens dmenu/rofi
 4. Printscreen opens Spectacle/Flameshot
 5. Mod + Shift + Q closes focused application
