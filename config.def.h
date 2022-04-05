@@ -90,15 +90,19 @@ static const char *mutevol[] = {"/usr/bin/pactl", "set-sink-mute", "0",
 static Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_d, spawn, SHCMD("rofi -show drun || dmenu_run")},
-    {MODKEY, XK_Return, spawn, {.v = termcmd}},
+    {MODKEY, XK_Return, spawn, SHCMD("tabbed -r 2 st -w '' || st ")},
     {MODKEY | ShiftMask, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},
     {MODKEY, XK_i, incnmaster, {.i = +1}},
     {MODKEY, XK_o, incnmaster, {.i = -1}},
-    {MODKEY, XK_p, spawn, SHCMD("nemo || st -e ranger || thunar || dolphin || nautilus")},
+    {MODKEY, XK_p, spawn,
+     SHCMD("nemo || tabbed -r 2 st -w '' -e ranger || st -e ranger || thunar "
+           "|| dolphin || nautilus")},
     {MODKEY, XK_b, spawn,
-     SHCMD("firefox || chromium || librewolf-community || brave-bin")},
+     SHCMD("firefox || chromium || librewolf-community || brave-bin || "
+           "$HOME/AppImages/LibreWolf/LibreWolf.x86_64.AppImage")},
+    {MODKEY, XK_x, spawn, SHCMD("slock")},
     {0, XK_Print, spawn, SHCMD("spectacle || flameshot")},
     {0, XF86XK_AudioLowerVolume, spawn, {.v = downvol}},
     {0, XF86XK_AudioMute, spawn, {.v = mutevol}},
