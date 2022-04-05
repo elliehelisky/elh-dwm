@@ -2,7 +2,11 @@
 My DWM Build
 Compiled on Void Linux
 
-Relies on [my st build](https://github.com/elliehelisky/elh-st)
+# Complimentaries
+Relies on (Not required)
+1. [elh-st](https://github.com/elliehelisky/elh-st)
+2. [elh-slock](https://github.com/elliehelisky/elh-slock)
+3. [elh-tabbed](https://github.com/elliehelisky/elh-tabbed)
 
 # Build Dependencies
 - libXinerama-devel
@@ -52,4 +56,5 @@ For the most part, I am using default DWM hotkeys, with some odd exceptions
 4. Printscreen opens Spectacle/Flameshot
 5. Mod + Shift + Q closes focused application
 6. Mod + Shift + R quits dwm
+7. Mod + X will lock the screen using slock
 
