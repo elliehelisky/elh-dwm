@@ -17,7 +17,7 @@ static const int systraypinningfailfirst =
 static const int showsystray = 1; /* 0 means no systray */
 static const int showbar = 1;     /* 0 means no bar */
 static const int topbar = 1;      /* 0 means bottom bar */
-static const char *fonts[] = {"monospace:size=10"};
+static const char *fonts[] = {"Unifont:size=12"};
 static const char dmenufont[] = "monospace:size=10";
 static const char col_gray1[] = "#222222";
 static const char col_gray2[] = "#444444";
@@ -51,11 +51,12 @@ static const int resizehints =
 static const int lockfullscreen =
     1; /* 1 will force focus on the fullscreen window */
 
+#include "fibonacci.c"
 static const Layout layouts[] = {
     /* symbol     arrange function */
     {"[]=", tile}, /* first entry is default */
     {"><>", NULL}, /* no layout function means floating behavior */
-    {"[M]", monocle},
+    {"[M]", monocle}, {"[@]", spiral}, {"[\\]", dwindle},
 };
 
 /* key definitions */
@@ -97,7 +98,7 @@ static Key keys[] = {
     {MODKEY, XK_i, incnmaster, {.i = +1}},
     {MODKEY, XK_o, incnmaster, {.i = -1}},
     {MODKEY, XK_p, spawn,
-     SHCMD("nemo || tabbed -r 2 st -w '' -e ranger || st -e ranger || thunar "
+     SHCMD("nemo || st -e ranger || thunar "
            "|| dolphin || nautilus")},
     {MODKEY, XK_b, spawn,
      SHCMD("firefox || chromium || librewolf-community || brave-bin || "
@@ -121,11 +122,14 @@ static Key keys[] = {
     {MODKEY | ShiftMask, XK_0, tag, {.ui = ~0}},
     {MODKEY, XK_comma, focusmon, {.i = -1}},
     {MODKEY, XK_period, focusmon, {.i = +1}},
+    {MODKEY | ControlMask | ShiftMask, XK_q, quit, {1}},
     {MODKEY | ShiftMask, XK_comma, tagmon, {.i = -1}},
     {MODKEY | ShiftMask, XK_period, tagmon, {.i = +1}},
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
         TAGKEYS(XK_5, 4) TAGKEYS(XK_6, 5) TAGKEYS(XK_7, 6) TAGKEYS(XK_8, 7)
             TAGKEYS(XK_9, 8){MODKEY | ShiftMask, XK_r, quit, {0}},
+    {MODKEY, XK_e, setlayout, {.v = &layouts[3]}},
+    {MODKEY | ShiftMask, XK_e, setlayout, {.v = &layouts[4]}},
 };
 
 /* button definitions */
