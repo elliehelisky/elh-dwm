@@ -1,6 +1,11 @@
 # elh-dwm
 My DWM Build
-Compiled on Void Linux
+
+# Tested and working Distros
+1. Void Linux
+2. Alpine Linux
+3. Rocky Linux/Fedora
+4. MXLinux/Debian
 
 # Complimentaries
 Relies on (Not required)
