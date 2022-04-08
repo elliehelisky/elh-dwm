@@ -57,4 +57,6 @@ For the most part, I am using default DWM hotkeys, with some odd exceptions
 5. Mod + Shift + Q closes focused application
 6. Mod + Shift + R quits dwm
 7. Mod + X will lock the screen using slock
+8. Mod + E / Mod + Shift + E will change the layout from spiral/dwindle
+9. Mod + Ctrl + Shift + q will restart dwm without logging out
 
