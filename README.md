@@ -16,11 +16,11 @@ I have some catches built in to find alternatives.
 **Example:**
 
 - rofi -> dmenu
-- firefox -> chromium -> librewolf -> brave
-- nemo -> ranger (via st) -> thunar -> dolphin -> nautilus
+- librewolf appimage -> firefox -> chromium -> librewolf -> brave
+- nemo -> ranger (via tabbed st) -> ranger (via st) -> thunar -> dolphin -> nautilus
 
 # Patches
-By default, I have systray, uselessgaps, and autostart as my patches. It has already been patched so no further action is needed.
+I have included many QoL patches in my build. You can see the following patches included in this repository.
 
 If you choose to remove any of these patches. Install *patch* from your distro's package manager and remove them using this sytax
 
