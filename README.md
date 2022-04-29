@@ -9,7 +9,7 @@ Compiled on Void Linux
 - All dependencies that are included with the previously stated
 
 # Optional
-By default, I am using ST, rofi, spectacle, and nemo.  If you do not wish to use any of these, you can edit config.def.h to replace st with a terminal of your choice, rofi with dmenu, etc.
+By default, I am using ST, rofi, scrot, and nemo.  If you do not wish to use any of these, you can edit config.def.h to replace st with a terminal of your choice, rofi with dmenu, etc.
 
 I have some catches built in to find alternatives.
 
@@ -45,9 +45,10 @@ Type=Application
 
 For the most part, I am using default DWM hotkeys, with some odd exceptions
 1. The Mod key is Super/Windows/Command Key.
-2. Mod + P opens Nemo
+2. Mod + P opens File Manager
 3. Mod + D opens dmenu/rofi
-4. Printscreen opens Spectacle/Flameshot
-5. Mod + Shift + Q closes focused application
-6. Mod + Shift + R quits dwm
+4. Printscreen allows OSX Style Screenshot via Scot
+5. Shift + Printscreen takes a screenshot of entire screen(s) 
+6. Mod + Shift + Q closes focused application
+7. Mod + Shift + R quits dwm
 
