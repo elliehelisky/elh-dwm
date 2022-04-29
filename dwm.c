@@ -272,6 +272,7 @@ static void tagmon(const Arg *arg);
 static void tile(Monitor *);
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
+static void togglefullscr(const Arg *arg);
 static void toggletag(const Arg *arg);
 static void toggleview(const Arg *arg);
 static void unfocus(Client *c, int setfocus);
@@ -1091,6 +1092,11 @@ void incnmaster(const Arg *arg) {
   arrange(selmon);
 }
 
+void togglefullscr(const Arg *arg) {
+  if (selmon->sel)
+    setfullscreen(selmon->sel, !selmon->sel->isfullscreen);
+}
+
 #ifdef XINERAMA
 static int isuniquegeom(XineramaScreenInfo *unique, size_t n,
                         XineramaScreenInfo *info) {
@@ -1174,6 +1180,8 @@ void manage(Window w, XWindowAttributes *wa) {
   updatewindowtype(c);
   updatesizehints(c);
   updatewmhints(c);
+  c->x = c->mon->mx + (c->mon->mw - WIDTH(c)) / 2;
+  c->y = c->mon->my + (c->mon->mh - HEIGHT(c)) / 2;
   XSelectInput(dpy, w,
                EnterWindowMask | FocusChangeMask | PropertyChangeMask |
                    StructureNotifyMask);
