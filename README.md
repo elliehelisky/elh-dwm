@@ -51,5 +51,5 @@ For the most part, I am using default DWM hotkeys, with some odd exceptions
 5. Shift + Printscreen takes a screenshot of entire screen(s) 
 6. Mod + Shift + Q closes focused application
 7. Mod + Shift + R quits dwm
-8. Mod + Ctrl + Shift + Q will restart DWM without logging you out.
+8. Mod + Ctrl + Shift + Q will restart DWM without logging you out. (Good for applying changes after recompiling DWM)
 
