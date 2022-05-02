@@ -41,6 +41,7 @@ static const Rule rules[] = {
     /* class      instance    title       tags mask     isfloating   monitor */
     {"Gimp", NULL, NULL, 0, 1, -1},
     {"Firefox", NULL, NULL, 1 << 8, 0, -1},
+    {"feh", NULL, NULL, 0, -1, 0},
 };
 
 /* layout(s) */
@@ -54,9 +55,10 @@ static const int lockfullscreen =
 #include "fibonacci.c"
 static const Layout layouts[] = {
     /* symbol     arrange function */
-    {"[]=", tile}, /* first entry is default */
-    {"><>", NULL}, /* no layout function means floating behavior */
-    {"[M]", monocle}, {"[@]", spiral}, {"[\\]", dwindle},
+    {"[T I L E]", tile}, /* first entry is default */
+    {"[N U L L]", NULL}, /* no layout function means floating behavior */
+    {"[M O N O]", monocle},       {"[S P I R A L]", spiral},
+    {"[D W I N D L E]", dwindle},
 };
 
 /* key definitions */
@@ -106,11 +108,15 @@ static Key keys[] = {
            "chromium || librewolf-community || brave-bin")},
     {MODKEY, XK_x, spawn, SHCMD("slock")},
     {0, XK_Print, spawn,
-     SHCMD("scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'xclip -selection clip "
-           "-t image/png \"$f\" && mv \"$f\" ~/Pictures/screenshots'")},
+     SHCMD("mkdir ~/Pictures/screenshots & pkill feh & scrot -s "
+           "'screenshot_%Y%m%d_%H%M%S.png' -e 'xclip -selection clip -t "
+           "image/png \"$f\" && feh \"$f\" && mv \"$f\" "
+           "~/Pictures/screenshots/ || mv \"$f\" ~/Pictures/screenshots/'")},
     {ShiftMask, XK_Print, spawn,
-     SHCMD("scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'xclip -selection clip -t "
-           "image/png \"$f\" && mv \"$f\" ~/Pictures/screenshots'")},
+     SHCMD("mkdir ~/Pictures/screenshots & pkill feh & scrot "
+           "'screenshot_%Y%m%d_%H%M%S.png' -e 'xclip -selection clip -t "
+           "image/png \"$f\" && feh \"$f\" && mv \"$f\" "
+           "~/Pictures/screenshots/ || mv \"$f\" ~/Pictures/screenshots/'")},
     {0, XF86XK_AudioLowerVolume, spawn, {.v = downvol}},
     {0, XF86XK_AudioMute, spawn, {.v = mutevol}},
     {0, XF86XK_AudioRaiseVolume, spawn, {.v = upvol}},
