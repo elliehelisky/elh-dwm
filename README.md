@@ -8,10 +8,6 @@ Compiled on Void Linux
 - freetype-devel
 - All dependencies that are included with the previously stated
 
-# Assumptions
-- You are using the Nix Package Manager
-- You are using Scrot
-
 # Optional
 By default, I am using ST, rofi, scrot, and nemo.  If you do not wish to use any of these, you can edit config.def.h to replace st with a terminal of your choice, rofi with dmenu, etc.
 
@@ -20,7 +16,7 @@ I have some catches built in to find alternatives.
 **Example:**
 
 - rofi -> dmenu
-- librewolf (via Nix) -> firefox -> chromium -> librewolf -> brave
+- librewolf appimage -> firefox -> chromium -> librewolf -> brave
 - nemo -> ranger (via tabbed st) -> ranger (via st) -> thunar -> dolphin -> nautilus
 
 # Patches

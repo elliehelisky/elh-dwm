@@ -23,7 +23,7 @@ static const char col_gray1[] = "#1a1826"; /* Workspace Empty Space */
 static const char col_gray2[] = "#444444"; /* No Clue */
 static const char col_gray3[] = "#F28fad"; /* Inactive Workspace Color */
 static const char col_gray4[] = "#d9e0ee"; /* X Window Text */
-static const char col_cyan[] = "#302d41"; /* Active Color Bar  */
+static const char col_cyan[] = "#302d41";  /* Active Color Bar  */
 static const char *colors[][3] = {
     /*               fg         bg         border   */
     [SchemeNorm] = {col_gray3, col_gray1, col_gray2},
@@ -103,9 +103,8 @@ static Key keys[] = {
      SHCMD("nemo || st -e ranger || thunar "
            "|| dolphin || nautilus")},
     {MODKEY, XK_b, spawn,
-     SHCMD("$HOME/AppImages/LibreWolf/LibreWolf.x86_64.AppImage || firefox "
-           "|| "
-           "chromium || librewolf-community || brave-bin")},
+     SHCMD("/nix/store/29z6mphzfq1gy7042hx9cp5gmvbg52r1-librewolf-99.0.1-3/bin/"
+           "librewolf || firefox || chromium")},
     {MODKEY, XK_x, spawn, SHCMD("slock")},
     {0, XK_Print, spawn,
      SHCMD("mkdir ~/Pictures/screenshots & pkill feh & scrot -s "
