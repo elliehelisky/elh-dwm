@@ -33,13 +33,13 @@ Create a .desktop file in /usr/share/xsessions/
 
 [Desktop Entry]
 
-Name=dwm
+`Name=dwm
 
 Comment=Dynamic Window Manager  
 
 Exec=dwm
 
-Type=Application
+Type=Application`
 
 # Hotkeys
 
