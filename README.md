@@ -16,8 +16,8 @@ I have some catches built in to find alternatives.
 **Example:**
 
 - rofi -> dmenu
-- librewolf appimage -> firefox -> chromium -> librewolf -> brave
-- nemo -> ranger (via tabbed st) -> ranger (via st) -> thunar -> dolphin -> nautilus
+- librewolf  -> firefox -> chromium -> librewolf -> brave
+- nemo -> ranger (via tabbed st) -> ranger (via st)
 
 # Patches
 I have included many QoL patches in my build. You can see the following patches included in this repository.
