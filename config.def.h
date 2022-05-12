@@ -100,11 +100,9 @@ static Key keys[] = {
     {MODKEY, XK_i, incnmaster, {.i = +1}},
     {MODKEY, XK_o, incnmaster, {.i = -1}},
     {MODKEY, XK_p, spawn,
-     SHCMD("nemo || st -e ranger || thunar "
-           "|| dolphin || nautilus")},
+     SHCMD("nemo")},
     {MODKEY, XK_b, spawn,
-     SHCMD("/nix/store/29z6mphzfq1gy7042hx9cp5gmvbg52r1-librewolf-99.0.1-3/bin/"
-           "librewolf || firefox || chromium")},
+     SHCMD("librewolf || firefox || chromium")},
     {MODKEY, XK_x, spawn, SHCMD("slock")},
     {0, XK_Print, spawn,
      SHCMD("mkdir ~/Pictures/screenshots & pkill feh & scrot -s "
