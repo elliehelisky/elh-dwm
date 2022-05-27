@@ -28,6 +28,14 @@ If you choose to remove any of these patches. Install *patch* from your distro's
 2.  correct any errors that may happen
 3. `sudo make clean install`
 
+# Installing
+
+Assuming you installed the required dependencies from your distribution. There is an install script included.
+Run the script WITHIN elh-dwm folder
+`chmod +x setup.sh`
+`./setup.sh`
+
+
 # Starting it from a Display Manager (SDDM, LightDM, etc;)
 Create a .desktop file in /usr/share/xsessions/
 
