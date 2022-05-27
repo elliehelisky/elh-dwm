@@ -11,14 +11,6 @@ Compiled on Void Linux
 # Optional
 By default, I am using ST, rofi, scrot, and nemo.  If you do not wish to use any of these, you can edit config.def.h to replace st with a terminal of your choice, rofi with dmenu, etc.
 
-I have some catches built in to find alternatives.
-
-**Example:**
-
-- rofi -> dmenu
-- librewolf  -> firefox -> chromium -> librewolf -> brave
-- nemo -> ranger (via tabbed st) -> ranger (via st)
-
 # Patches
 I have included many QoL patches in my build. You can see the following patches included in this repository.
 
