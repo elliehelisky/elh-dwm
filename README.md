@@ -26,6 +26,7 @@ Assuming you installed the required dependencies from your distribution. There i
 Run the script WITHIN elh-dwm folder
 1. `chmod +x setup.sh`
 2. `./setup.sh`
+3. Skip "Starting it from a Display Manager" if using script.
 
 
 # Starting it from a Display Manager (SDDM, LightDM, etc;)
