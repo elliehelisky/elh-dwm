@@ -1,5 +1,5 @@
 # elh-dwm
-My DWM Build
+Ellie's Build of DWM
 Compiled on Void Linux
 
 # Build Dependencies
