@@ -53,10 +53,9 @@ For the most part, I am using default DWM hotkeys, with some odd exceptions
 7. Mod + Shift + R quits dwm
 8. Mod + Ctrl + Shift + Q will restart DWM without logging you out. (Good for applying changes after recompiling DWM)
 
-# Tested Distros
+# Tested Distros (including Derivatives)
 1. Void Linux
 2. Arch Linux
 3. Alpine Linux
-4. Rocky Linux
+4. Fedora/RHEL
 5. Debian/Ubuntu
-
