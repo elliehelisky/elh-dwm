@@ -32,8 +32,8 @@ If you choose to remove any of these patches. Install *patch* from your distro's
 
 Assuming you installed the required dependencies from your distribution. There is an install script included.
 Run the script WITHIN elh-dwm folder
-`chmod +x setup.sh`
-`./setup.sh`
+1. `chmod +x setup.sh`
+2. `./setup.sh`
 
 
 # Starting it from a Display Manager (SDDM, LightDM, etc;)
