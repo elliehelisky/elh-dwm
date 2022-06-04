@@ -17,13 +17,13 @@ static const int systraypinningfailfirst =
 static const int showsystray = 1; /* 0 means no systray */
 static const int showbar = 1;     /* 0 means no bar */
 static const int topbar = 1;      /* 0 means bottom bar */
-static const char *fonts[] = {"Source Code Pro:size=15"};
-static const char dmenufont[] = "monospace:size=15";
-static const char col_gray1[] = "#1a1826"; /* Workspace Empty Space */
-static const char col_gray2[] = "#000000"; /* No Clue */
-static const char col_gray3[] = "#F28fad"; /* Inactive Workspace Color */
-static const char col_gray4[] = "#d9e0ee"; /* X Window Text */
-static const char col_cyan[] = "#302d41";  /* Active Color Bar  */
+static const char *fonts[] = {"Unifont:size=12"};
+static const char dmenufont[] = "monospace:size=10";
+static const char col_gray1[] = "#222222";
+static const char col_gray2[] = "#444444";
+static const char col_gray3[] = "#bbbbbb";
+static const char col_gray4[] = "#eeeeee";
+static const char col_cyan[] = "#db7092";
 static const char *colors[][3] = {
     /*               fg         bg         border   */
     [SchemeNorm] = {col_gray3, col_gray1, col_gray2},
@@ -99,8 +99,13 @@ static Key keys[] = {
     {MODKEY, XK_k, focusstack, {.i = -1}},
     {MODKEY, XK_i, incnmaster, {.i = +1}},
     {MODKEY, XK_o, incnmaster, {.i = -1}},
-    {MODKEY, XK_p, spawn, SHCMD("nemo")},
-    {MODKEY, XK_b, spawn, SHCMD("librewolf || firefox || chromium")},
+    {MODKEY, XK_p, spawn,
+     SHCMD("nemo || st -e ranger || thunar "
+           "|| dolphin || nautilus")},
+    {MODKEY, XK_b, spawn,
+     SHCMD("$HOME/AppImages/LibreWolf/LibreWolf.x86_64.AppImage || firefox "
+           "|| "
+           "chromium || librewolf-community || brave-bin")},
     {MODKEY, XK_x, spawn, SHCMD("slock")},
     {0, XK_Print, spawn,
      SHCMD("mkdir ~/Pictures/screenshots & pkill feh & scrot -s "
