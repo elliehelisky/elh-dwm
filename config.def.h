@@ -17,7 +17,7 @@ static const int systraypinningfailfirst =
 static const int showsystray = 1; /* 0 means no systray */
 static const int showbar = 1;     /* 0 means no bar */
 static const int topbar = 1;      /* 0 means bottom bar */
-static const char *fonts[] = {"Source Code Pro:size=15", "FontAwesome:size:15"};
+static const char *fonts[] = {"Source Code Pro:size=15", "FontAwesome:size=15"};
 static const char dmenufont[] = "monospace:size=15";
 static const char col_gray1[] = "#1a1826"; /* Workspace Empty Space */
 static const char col_gray2[] = "#000000"; /* No Clue */
