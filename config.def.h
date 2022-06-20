@@ -10,13 +10,15 @@ static const unsigned int systraypinning =
           X */
 static const unsigned int systrayonleft =
     0; /* 0: systray in the right corner, >0: systray on left of status text */
-static const unsigned int systrayspacing = 2; /* systray spacing */
+static const unsigned int systrayspacing = 1; /* systray spacing */
 static const int systraypinningfailfirst =
     1; /* 1: if pinning fails, display systray on the first monitor, False:
           display systray on the last monitor*/
-static const int showsystray = 1; /* 0 means no systray */
-static const int showbar = 1;     /* 0 means no bar */
-static const int topbar = 1;      /* 0 means bottom bar */
+static const int showsystray = 1;  /* 0 means no systray */
+static const int showbar = 1;      /* 0 means no standard bar */
+static const int topbar = 1;       /* 0 means standard bar at bottom */
+static const int extrabar = 0;     /* 0 means no extra bar */
+static const char statussep = ';'; /* separator between statuses */
 static const char *fonts[] = {"Source Code Pro:size=15", "FontAwesome:size=15"};
 static const char dmenufont[] = "monospace:size=15";
 static const char col_gray1[] = "#1a1826"; /* Workspace Empty Space */
@@ -24,14 +26,28 @@ static const char col_gray2[] = "#000000"; /* No Clue */
 static const char col_gray3[] = "#F28fad"; /* Inactive Workspace Color */
 static const char col_gray4[] = "#d9e0ee"; /* X Window Text */
 static const char col_cyan[] = "#302d41";  /* Active Color Bar  */
-static const char *colors[][3] = {
-    /*               fg         bg         border   */
-    [SchemeNorm] = {col_gray3, col_gray1, col_gray2},
-    [SchemeSel] = {col_gray4, col_cyan, col_cyan},
+
+static char normbgcolor[] = "#2E3440";
+static char normbordercolor[] = "#3B4252";
+static char normfgcolor[] = "#ECEFF4";
+static char selfgcolor[] = "#D8DEE9";
+static char selbordercolor[] = "#5E81AC";
+static char selbgcolor[] = "#191c23";
+
+static char *colors[][3] = {
+    /*               fg           bg           border   */
+    [SchemeNorm] = {normfgcolor, normbgcolor, normbordercolor},
+    [SchemeSel] = {selfgcolor, selbgcolor, selbordercolor},
 };
 
 /* tagging */
-static const char *tags[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+static const char *tags[] = {"", "", "", "", "", "", "", "", ""};
+
+static const char *tagsel[][2] = {
+    {"#ff0000", "#302d41"}, {"#ff7f00", "#302d41"}, {"#ffff00", "#302d41"},
+    {"#00ff00", "#302d41"}, {"#0000ff", "#302d41"}, {"#4b0082", "#302d41"},
+    {"#9400d3", "#302d41"}, {"#ffffff", "#302d41"}, {"#000000", "#302d41"},
+};
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -55,10 +71,9 @@ static const int lockfullscreen =
 #include "fibonacci.c"
 static const Layout layouts[] = {
     /* symbol     arrange function */
-    {"[T I L E]", tile}, /* first entry is default */
-    {"[N U L L]", NULL}, /* no layout function means floating behavior */
-    {"[M O N O]", monocle},       {"[S P I R A L]", spiral},
-    {"[D W I N D L E]", dwindle},
+    {"[T]", tile}, /* first entry is default */
+    {"[N]", NULL}, /* no layout function means floating behavior */
+    {"[M]", monocle}, {"[S]", spiral}, {"[D]", dwindle},
 };
 
 /* key definitions */
@@ -95,18 +110,16 @@ static Key keys[] = {
     {MODKEY, XK_d, spawn, SHCMD("rofi -show drun || dmenu_run")},
     {MODKEY, XK_Return, spawn, SHCMD("tabbed -r 2 st -w '' || st ")},
     {MODKEY | ShiftMask, XK_b, togglebar, {0}},
+    {MODKEY | ControlMask, XK_b, toggleextrabar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},
     {MODKEY, XK_i, incnmaster, {.i = +1}},
     {MODKEY, XK_o, incnmaster, {.i = -1}},
-    {MODKEY, XK_p, spawn, SHCMD("nemo")},
+    {MODKEY, XK_p, spawn, SHCMD("pcmanfm")},
     {MODKEY, XK_b, spawn, SHCMD("librewolf || firefox || chromium")},
     {MODKEY, XK_x, spawn, SHCMD("slock")},
     {0, XK_Print, spawn,
-     SHCMD("mkdir ~/Pictures/screenshots & pkill feh & scrot -s "
-           "'screenshot_%Y%m%d_%H%M%S.png' -e 'xclip -selection clip -t "
-           "image/png \"$f\" && feh \"$f\" && mv \"$f\" "
-           "~/Pictures/screenshots/ || mv \"$f\" ~/Pictures/screenshots/'")},
+     SHCMD("flameshot gui --path $HOME/Pictures/screenshots/")},
     {ShiftMask, XK_Print, spawn,
      SHCMD("mkdir ~/Pictures/screenshots & pkill feh & scrot "
            "'screenshot_%Y%m%d_%H%M%S.png' -e 'xclip -selection clip -t "
@@ -150,6 +163,9 @@ static Button buttons[] = {
     {ClkTagBar, MODKEY, Button3, toggletag, {0}},
     {ClkWinTitle, 0, Button2, zoom, {0}},
     {ClkStatusText, 0, Button2, spawn, {.v = termcmd}},
+    {ClkExBarLeftStatus, 0, Button2, spawn, {.v = termcmd}},
+    {ClkExBarMiddle, 0, Button2, spawn, {.v = termcmd}},
+    {ClkExBarRightStatus, 0, Button2, spawn, {.v = termcmd}},
     {ClkClientWin, MODKEY, Button1, movemouse, {0}},
     {ClkClientWin, MODKEY, Button2, togglefloating, {0}},
     {ClkClientWin, MODKEY, Button3, resizemouse, {0}},
