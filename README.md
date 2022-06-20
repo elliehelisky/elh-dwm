@@ -17,7 +17,7 @@ I have included many QoL patches in my build. You can see the following patches 
 
 If you choose to remove any of these patches. Install *patch* from your distro's package manager and remove them using this sytax
 
-1. `patch p1 < patch-name.diff`
+1. `patch -R < patch-name.diff`
 2.  correct any errors that may happen
 3. `sudo make clean install`
 
