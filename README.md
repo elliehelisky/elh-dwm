@@ -49,11 +49,10 @@ For the most part, I am using default DWM hotkeys, with some odd exceptions
 1. The Mod key is Super/Windows/Command Key.
 2. Mod + P opens File Manager
 3. Mod + D opens dmenu/rofi
-4. Printscreen allows OSX Style Screenshot via Scot
-5. Shift + Printscreen takes a screenshot of entire screen(s) 
-6. Mod + Shift + Q closes focused application
-7. Mod + Shift + R quits dwm
-8. Mod + Ctrl + Shift + Q will restart DWM without logging you out. (Good for applying changes after recompiling DWM)
+4. Printscreen opens Flameshot
+5. Mod + Shift + Q closes focused application
+6. Mod + Shift + R quits dwm
+7. Mod + Ctrl + Shift + Q will restart DWM without logging you out. (Good for applying changes after recompiling DWM)
 
 # Tested Distros (including Derivatives)
 1. Void Linux
