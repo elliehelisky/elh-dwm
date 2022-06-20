@@ -10,7 +10,7 @@
 - All dependencies that are included with the previously stated
 
 # Optional
-By default, I am using ST, rofi, scrot, and nemo.  If you do not wish to use any of these, you can edit config.def.h to replace st with a terminal of your choice, rofi with dmenu, etc.
+By default, I am using ST, rofi, flameshot, and pcmanfm  If you do not wish to use any of these, you can edit config.def.h to replace st with a terminal of your choice, rofi with dmenu, etc.
 
 # Patches
 I have included many QoL patches in my build. You can see the following patches included in this repository.
