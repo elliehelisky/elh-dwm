@@ -1,7 +1,7 @@
 # elh-dwm
-Ellie's Build of DWM
-Originally Compiled on Void Linux
-Compiled on Gentoo
+- Ellie's Build of DWM
+- Originally Compiled on Void Linux
+- Compiled on Gentoo
 
 # Build Dependencies
 - libXinerama-devel
