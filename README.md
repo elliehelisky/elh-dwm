@@ -1,6 +1,7 @@
 # elh-dwm
 Ellie's Build of DWM
-Compiled on Void Linux
+Originally Compiled on Void Linux
+Compiled on Gentoo
 
 # Build Dependencies
 - libXinerama-devel
@@ -60,3 +61,4 @@ For the most part, I am using default DWM hotkeys, with some odd exceptions
 3. Alpine Linux
 4. Fedora/RHEL
 5. Debian/Ubuntu
+6. Gentoo
