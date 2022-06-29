@@ -26,7 +26,7 @@ If you choose to remove any of these patches. Install *patch* from your distro's
 Assuming you installed the required dependencies from your distribution. There is an install script included.
 Run the script WITHIN elh-dwm folder
 1. `chmod +x setup.sh`
-2. `./setup.sh`
+2. `sudo ./setup.sh`
 3. Skip "Starting it from a Display Manager" if using script.
 
 # Recompiling
