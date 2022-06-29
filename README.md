@@ -29,6 +29,9 @@ Run the script WITHIN elh-dwm folder
 2. `./setup.sh`
 3. Skip "Starting it from a Display Manager" if using script.
 
+# Recompiling
+If you make any changes, you must delete the old config.h. Without doing this, you may run into issues.
+Simply do `sudo rm config.h && sudo make clean install` to compile dwm with new configuration.
 
 # Starting it from a Display Manager (SDDM, LightDM, etc;)
 Create a .desktop file in /usr/share/xsessions/
